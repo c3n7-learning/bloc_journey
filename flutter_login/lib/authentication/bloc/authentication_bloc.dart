@@ -47,8 +47,6 @@ class AuthenticationBloc
   Future<void> _onAuthenticationStatusChanged(
       _AuthenticationStatusChanged event,
       Emitter<AuthenticationState> emit) async {
-    // ignore: avoid_print
-    print(event.status);
     switch (event.status) {
       case AuthenticationStatus.unauthenticated:
         return emit(const AuthenticationState.unauthenticated());

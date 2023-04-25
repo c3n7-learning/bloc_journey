@@ -66,25 +66,20 @@ class _AppViewState extends State<AppView> {
       builder: (context, child) {
         return BlocListener<AuthenticationBloc, AuthenticationState>(
           listener: (context, state) {
-            // ignore: avoid_print
-            print('Here I am:: $state');
             switch (state.status) {
               case AuthenticationStatus.authenticated:
-                print('Here:: $state');
                 _navigator.pushAndRemoveUntil<void>(
                   HomePage.route(),
                   (route) => false,
                 );
                 break;
               case AuthenticationStatus.unauthenticated:
-                print('Here:: $state');
                 _navigator.pushAndRemoveUntil<void>(
                   LoginPage.route(),
                   (route) => false,
                 );
                 break;
               case AuthenticationStatus.unknown:
-                print('Here:: $state');
                 break;
             }
           },
