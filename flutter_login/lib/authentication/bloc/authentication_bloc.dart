@@ -15,10 +15,10 @@ class AuthenticationBloc
   late StreamSubscription<AuthenticationStatus>
       _authenticationStatusSubscription;
 
-  AuthenticationBloc(
-      {required AuthenticationRepository authenticationRepository,
-      required UserRepository userRepository})
-      : _authenticationRepository = authenticationRepository,
+  AuthenticationBloc({
+    required AuthenticationRepository authenticationRepository,
+    required UserRepository userRepository,
+  })  : _authenticationRepository = authenticationRepository,
         _userRepository = userRepository,
         super(const AuthenticationState.unknown()) {
     on<_AuthenticationStatusChanged>(_onAuthenticationStatusChanged);
@@ -47,6 +47,8 @@ class AuthenticationBloc
   Future<void> _onAuthenticationStatusChanged(
       _AuthenticationStatusChanged event,
       Emitter<AuthenticationState> emit) async {
+    // ignore: avoid_print
+    print(event.status);
     switch (event.status) {
       case AuthenticationStatus.unauthenticated:
         return emit(const AuthenticationState.unauthenticated());

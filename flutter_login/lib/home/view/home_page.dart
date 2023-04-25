@@ -27,6 +27,7 @@ class HomePage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
+                print('Elevated button pressed');
                 context
                     .read<AuthenticationBloc>()
                     .add(AuthenticationLogoutRequested());
