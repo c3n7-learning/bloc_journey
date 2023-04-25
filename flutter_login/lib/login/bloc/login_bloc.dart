@@ -3,7 +3,6 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_login/login/models/models.dart';
 import 'package:formz/formz.dart';
-import 'package:user_repository/user_repository.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';
