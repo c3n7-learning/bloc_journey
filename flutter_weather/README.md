@@ -1,6 +1,7 @@
 # flutter_weather
 
-A new Flutter project.
+- [Reference App](https://github.com/felangel/bloc/tree/master/examples/flutter_weather)
+- [Guide Docs](https://bloclibrary.dev/#/flutterweathertutorial)
 
 ## Getting Started
 
